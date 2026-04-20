@@ -1,0 +1,12 @@
+{
+  "status": 201,
+  "body": {
+    "_id": "69afb7d947b2030015364115",
+    "firstName": "DELETE CONTACT",
+    "lastName": "Test",
+    "email": "api@test.com",
+    "phone": "999999999",
+    "owner": "69afb18b47b20300153640e1",
+    "__v": 0
+  }
+}

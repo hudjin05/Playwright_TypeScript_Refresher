@@ -1,0 +1,253 @@
+2026-03-10 09:25:41 [ERROR]: HTTP Status validation failed: expected 200, got [object Object] 
+2026-03-10 09:51:43 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:51:43 [INFO]: HTTP Status validated: 201 
+2026-03-10 09:53:19 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:53:19 [INFO]: HTTP Status validated: 201 
+2026-03-10 09:55:34 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:55:34 [INFO]: HTTP Status validated: 201 
+2026-03-10 09:56:31 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:56:32 [INFO]: HTTP Status validated: 201 
+2026-03-10 09:58:34 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:58:34 [INFO]: HTTP Status validated: 201 
+2026-03-10 09:59:09 [INFO]: HTTP Status validated: 200 
+2026-03-10 09:59:09 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:00:22 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:00:22 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:00:42 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:00:42 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:00:46 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:00:47 [INFO]: Input value: test123
+2026-03-10 10:00:48 [INFO]: Clicked element successfully.
+2026-03-10 10:02:21 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:02:21 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:02:25 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:02:26 [INFO]: Input value: test123
+2026-03-10 10:02:27 [INFO]: Clicked element successfully.
+2026-03-10 10:04:16 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:04:17 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:04:21 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:04:22 [INFO]: Input value: test123
+2026-03-10 10:04:23 [INFO]: Clicked element successfully.
+2026-03-10 10:05:04 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:05:05 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:05:08 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:05:09 [INFO]: Input value: test123
+2026-03-10 10:05:11 [INFO]: Clicked element successfully.
+2026-03-10 10:20:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:20:49 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:20:50 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:20:54 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:20:56 [INFO]: Input value: test123
+2026-03-10 10:20:57 [INFO]: Clicked element successfully.
+2026-03-10 10:21:19 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:21:20 [INFO]: HTTP Status validated: 201 
+2026-03-10 10:21:20 [INFO]: HTTP Status validated: 200 
+2026-03-10 10:21:24 [INFO]: Input value: test@yopmail.com
+2026-03-10 10:21:25 [INFO]: Input value: test123
+2026-03-10 10:21:26 [INFO]: Clicked element successfully.
+2026-03-10 11:08:03 [INFO]: HTTP Status validated: 200 
+2026-03-10 11:08:09 [INFO]: Input value: test@yopmail.com
+2026-03-10 11:08:10 [INFO]: Input value: test123
+2026-03-10 11:08:11 [INFO]: Clicked element successfully.
+2026-03-10 13:43:29 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:43:29 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:43:34 [INFO]: Input value: test@yopmail.com
+2026-03-10 13:43:35 [INFO]: Input value: test123
+2026-03-10 13:43:36 [INFO]: Clicked element successfully.
+2026-03-10 13:46:16 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:46:16 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:46:17 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:46:21 [INFO]: Input value: test@yopmail.com
+2026-03-10 13:46:22 [INFO]: Input value: test123
+2026-03-10 13:46:23 [INFO]: Clicked element successfully.
+2026-03-10 13:50:05 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:50:05 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:50:05 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:50:09 [INFO]: Input value: test@yopmail.com
+2026-03-10 13:50:10 [INFO]: Input value: test123
+2026-03-10 13:50:11 [INFO]: Clicked element successfully.
+2026-03-10 13:50:48 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:50:48 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:50:52 [INFO]: Input value: test@yopmail.com
+2026-03-10 13:50:53 [INFO]: Input value: test123
+2026-03-10 13:50:54 [INFO]: Clicked element successfully.
+2026-03-10 13:53:11 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:53:11 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:53:11 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:53:11 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:53:12 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:53:15 [INFO]: Input value: test@yopmail.com
+2026-03-10 13:53:16 [INFO]: Input value: test111@yopmail.com
+2026-03-10 13:53:17 [INFO]: Input value: test123
+2026-03-10 13:53:17 [INFO]: Input value: test123
+2026-03-10 13:53:18 [INFO]: Clicked element successfully.
+2026-03-10 13:53:18 [INFO]: Clicked element successfully.
+2026-03-10 13:54:35 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:35 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:35 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:54:35 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:54:35 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:49 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:54:49 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:54:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:54:53 [INFO]: Input value: test222@yopmail.com
+2026-03-10 13:54:53 [INFO]: Input value: test111@yopmail.com
+2026-03-10 13:54:54 [INFO]: Input value: test123
+2026-03-10 13:54:54 [INFO]: Input value: test123
+2026-03-10 13:54:55 [INFO]: Clicked element successfully.
+2026-03-10 13:54:55 [INFO]: Clicked element successfully.
+2026-03-10 13:55:50 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:55:50 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:55:50 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:55:54 [INFO]: Input value: test222@yopmail.com
+2026-03-10 13:55:55 [INFO]: Input value: test123
+2026-03-10 13:55:56 [INFO]: Clicked element successfully.
+2026-03-10 13:59:19 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:59:20 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:59:20 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:59:24 [INFO]: Input value: test222@yopmail.com
+2026-03-10 13:59:25 [INFO]: Input value: test123
+2026-03-10 13:59:26 [INFO]: Clicked element successfully.
+2026-03-10 13:59:44 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:59:44 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:59:44 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:59:44 [INFO]: HTTP Status validated: 201 
+2026-03-10 13:59:45 [INFO]: HTTP Status validated: 200 
+2026-03-10 13:59:48 [INFO]: Input value: test222@yopmail.com
+2026-03-10 13:59:48 [INFO]: Input value: test111@yopmail.com
+2026-03-10 13:59:49 [INFO]: Input value: test123
+2026-03-10 13:59:49 [INFO]: Input value: test123
+2026-03-10 13:59:51 [INFO]: Clicked element successfully.
+2026-03-10 13:59:51 [INFO]: Clicked element successfully.
+2026-03-10 14:02:11 [INFO]: Test Suite is Starting
+2026-03-10 14:02:11 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:02:12 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:02:12 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:02:14 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:02:14 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:02:14 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:02:18 [INFO]: Input value: test222@yopmail.com
+2026-03-10 14:02:19 [INFO]: Input value: test123
+2026-03-10 14:02:20 [INFO]: Clicked element successfully.
+2026-03-10 14:02:45 [INFO]: Test Suite is Starting
+2026-03-10 14:02:45 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:02:47 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:02:47 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:02:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:02:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:02:49 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:02:49 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:02:49 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:02:53 [INFO]: Input value: test111@yopmail.com
+2026-03-10 14:02:53 [INFO]: Input value: test222@yopmail.com
+2026-03-10 14:02:54 [INFO]: Input value: test123
+2026-03-10 14:02:55 [INFO]: Input value: test123
+2026-03-10 14:02:56 [INFO]: Clicked element successfully.
+2026-03-10 14:02:56 [INFO]: Clicked element successfully.
+2026-03-10 14:07:26 [INFO]: Test Suite is Starting
+2026-03-10 14:07:26 [INFO]: Test Suite is Starting
+2026-03-10 14:07:26 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:07:26 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:07:29 [INFO]: The test is running: Unsuccessful Login with invalid credentials
+2026-03-10 14:07:29 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:07:29 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:07:29 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:07:33 [INFO]: Input value: TestGon12@yopmail.com
+2026-03-10 14:07:33 [INFO]: Input value: testaaaD@mail.com
+2026-03-10 14:07:34 [INFO]: Input value: test123
+2026-03-10 14:07:34 [INFO]: Input value: invalid
+2026-03-10 14:07:40 [ERROR]: Error clicking element: Error: locator.click: Test ended.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Log in' })[22m
+
+2026-03-10 14:08:24 [INFO]: Test Suite is Starting
+2026-03-10 14:08:24 [INFO]: Test Suite is Starting
+2026-03-10 14:08:24 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:08:24 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:08:25 [INFO]: The test is running: Unsuccessful Login with invalid credentials
+2026-03-10 14:08:25 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:08:25 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:08:25 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:08:29 [INFO]: Input value: testaaaD@mail.com
+2026-03-10 14:08:29 [INFO]: Input value: test@yopmail.com
+2026-03-10 14:08:30 [INFO]: Input value: test123
+2026-03-10 14:08:30 [INFO]: Input value: invalid
+2026-03-10 14:08:31 [INFO]: Clicked element successfully.
+2026-03-10 14:08:31 [INFO]: Clicked element successfully.
+2026-03-10 14:09:36 [INFO]: Test Suite is Starting
+2026-03-10 14:09:36 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:09:37 [INFO]: Test Suite is Starting
+2026-03-10 14:09:37 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:09:40 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:09:40 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:09:40 [INFO]: The test is running: Unsuccessful Login with invalid credentials
+2026-03-10 14:09:40 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:09:42 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:09:42 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:09:42 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:09:42 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:09:42 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:09:44 [INFO]: Input value: testaaaD@mail.com
+2026-03-10 14:09:44 [INFO]: Input value: test@yopmail.com
+2026-03-10 14:09:45 [INFO]: Input value: test123
+2026-03-10 14:09:45 [INFO]: Input value: invalid
+2026-03-10 14:09:46 [INFO]: Input value: test111@yopmail.com
+2026-03-10 14:09:46 [INFO]: Clicked element successfully.
+2026-03-10 14:09:46 [INFO]: Input value: test222@yopmail.com
+2026-03-10 14:09:47 [INFO]: Clicked element successfully.
+2026-03-10 14:09:47 [INFO]: Input value: test123
+2026-03-10 14:09:47 [INFO]: Input value: test123
+2026-03-10 14:09:49 [INFO]: Clicked element successfully.
+2026-03-10 14:09:49 [INFO]: Clicked element successfully.
+2026-03-10 14:13:19 [INFO]: Test Suite is Starting
+2026-03-10 14:13:19 [INFO]: Test Suite is Starting
+2026-03-10 14:13:19 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:13:19 [INFO]: URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:13:20 [INFO]: The test is running: should log in and log out successfully
+2026-03-10 14:13:20 [INFO]: The test is running: Unsuccessful Login with invalid credentials
+2026-03-10 14:13:20 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:13:20 [INFO]: >>> Navigating to homepage...
+2026-03-10 14:13:22 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:13:22 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:13:22 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:13:22 [INFO]: HTTP Status validated: 201 
+2026-03-10 14:13:22 [INFO]: HTTP Status validated: 200 
+2026-03-10 14:13:25 [INFO]: Input value: test@yopmail.com
+2026-03-10 14:13:25 [INFO]: Input value: testaaaD@mail.com
+2026-03-10 14:13:26 [INFO]: Input value: test111@yopmail.com
+2026-03-10 14:13:26 [INFO]: Input value: invalid
+2026-03-10 14:13:26 [INFO]: Input value: test123
+2026-03-10 14:13:26 [INFO]: Input value: test222@yopmail.com
+2026-03-10 14:13:27 [INFO]: Input value: test123
+2026-03-10 14:13:27 [INFO]: Input value: test123
+2026-03-10 14:13:27 [INFO]: Clicked element successfully.
+2026-03-10 14:13:28 [INFO]: Clicked element successfully.
+2026-03-10 14:13:29 [INFO]: Clicked element successfully.
+2026-03-10 14:13:29 [INFO]: Clicked element successfully.
+2026-03-10 14:19:00 INFO Test Suite is Starting
+2026-03-10 14:19:00 INFO Test Suite is Starting
+2026-03-10 14:19:00 INFO URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:19:00 INFO URL is https://thinking-tester-contact-list.herokuapp.com
+2026-03-10 14:19:03 INFO The test is running: Unsuccessful Login with invalid credentials
+2026-03-10 14:19:03 INFO >>> Navigating to homepage...
+2026-03-10 14:19:04 INFO The test is running: should log in and log out successfully
+2026-03-10 14:19:04 INFO >>> Navigating to homepage...
+2026-03-10 14:19:05 INFO HTTP Status validated: 200 
+2026-03-10 14:19:05 INFO HTTP Status validated: 200 
+2026-03-10 14:19:05 INFO HTTP Status validated: 201 
+2026-03-10 14:19:05 INFO HTTP Status validated: 201 
+2026-03-10 14:19:06 INFO HTTP Status validated: 200 
+2026-03-10 14:19:07 INFO Input value: test@yopmail.com
+2026-03-10 14:19:07 INFO Input value: testaaaD@mail.com
+2026-03-10 14:19:09 INFO Input value: invalid
+2026-03-10 14:19:09 INFO Input value: test123
+2026-03-10 14:19:09 INFO Input value: test111@yopmail.com
+2026-03-10 14:19:10 INFO Clicked element successfully.
+2026-03-10 14:19:10 INFO Clicked element successfully.
+2026-03-10 14:19:10 INFO Input value: test222@yopmail.com
+2026-03-10 14:19:10 INFO Input value: test123
+2026-03-10 14:19:11 INFO Input value: test123
+2026-03-10 14:19:12 INFO Clicked element successfully.
+2026-03-10 14:19:12 INFO Clicked element successfully.

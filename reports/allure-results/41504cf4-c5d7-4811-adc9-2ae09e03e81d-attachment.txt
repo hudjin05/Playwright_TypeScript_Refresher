@@ -1,0 +1,5 @@
+2026-03-10 14:19:05 INFO HTTP Status validated: 200 
+2026-03-10 14:19:05 INFO HTTP Status validated: 201 
+2026-03-10 14:19:09 INFO Input value: test111@yopmail.com
+2026-03-10 14:19:10 INFO Input value: test123
+2026-03-10 14:19:12 INFO Clicked element successfully.

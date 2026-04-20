@@ -1,0 +1,13 @@
+{
+  "status": 200,
+  "body": {
+    "user": {
+      "_id": "69afb17adf9da80015721e08",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test111@yopmail.com",
+      "__v": 16
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFmYjE3YWRmOWRhODAwMTU3MjFlMDgiLCJpYXQiOjE3NzMxMjM1NDV9.Pb8htu9Iq_D2ckBT3Ml7EHpYSlpzGH1p1ED_1io-VUQ"
+  }
+}

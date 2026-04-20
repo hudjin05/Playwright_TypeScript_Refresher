@@ -1,0 +1,10 @@
+2026-03-18 11:48:48 INFO Test Suite is Starting
+2026-03-18 11:48:48 INFO URL is https://thinking-tester-contact-list.herokuapp.com
+Allure environment configured for chromium
+2026-03-18 11:48:54 INFO The test is running: Unsuccessful Login with invalid credentials
+2026-03-18 11:48:54 INFO >>> Navigating to homepage...
+2026-03-18 11:49:00 INFO Input value: testaaaD@mail.com
+2026-03-18 11:49:02 INFO Input value: invalid
+2026-03-18 11:49:07 INFO Clicked element successfully.
+info The test completed successfully: Unsuccessful Login with invalid credentials
+info The Suite is completed: Unsuccessful Login with invalid credentials
