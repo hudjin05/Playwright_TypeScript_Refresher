@@ -1,0 +1,10 @@
+2026-03-18 11:49:20 INFO Test Suite is Starting
+2026-03-18 11:49:20 INFO URL is https://thinking-tester-contact-list.herokuapp.com
+Allure environment configured for edge
+2026-03-18 11:49:22 INFO The test is running: should log in and log out successfully
+2026-03-18 11:49:22 INFO >>> Navigating to homepage...
+2026-03-18 11:49:31 INFO Input value: test@yopmail.com
+2026-03-18 11:49:32 INFO Input value: test123
+2026-03-18 11:49:36 INFO Clicked element successfully.
+info The test completed successfully: should log in and log out successfully
+info The Suite is completed: should log in and log out successfully

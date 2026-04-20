@@ -1,0 +1,25 @@
+{
+  "credential": {
+    "email": "test111@yopmail.com",
+    "password": "test123"
+  },
+
+  "contact": {
+    "firstName": "ADD CONTACT",
+    "lastName": "Test",
+    "email": "api@test.com",
+    "phone": "999999999"
+  },
+
+  "credentialAdmin": {
+    "email": "test222@yopmail.com",
+    "password": "test123"
+  },
+
+  "addcontactToDelete": {
+    "firstName": "DELETE CONTACT",
+    "lastName": "Test",
+    "email": "api@test.com",
+    "phone": "999999999"
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@config/*": ["config/*"],
+            "@utils/*": ["utilities/*"],
+            "@pages/*": ["pages/*"],
+            "@hooks/*": ["hooks/*"],
+            "@test-data/*": ["test-data/*"], 
+            "@reusable-scripts/*": ["tests/reusable-scripts/*"],
+            "@services/*": ["services/*"]
+        },
+      "module": "CommonJS",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./dist",
+      "rootDir": "./",
+      "resolveJsonModule": true,
+      "types": ["node"], 
+      "target": "ES6",
+    },
+    "include": ["playwright.config.ts", "index.ts", "**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+}
+  
