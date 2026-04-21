@@ -1,0 +1,171 @@
+name: Playwright Tests with Allure Report
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+env:
+  URL: ${{ secrets.URL }}
+  API_URL: ${{ secrets.API_URL }}
+  USER_NAME: ${{ secrets.USER_NAME }}
+  EMAIL: ${{ secrets.EMAIL }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Playwright
+        uses: ./.github/actions/playwright-setup
+
+      - name: Run Smoke Tests
+        run: npm run smoke
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-smoke
+          path: allure-results
+
+  sanity:
+    name: Sanity Test
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Playwright
+        uses: ./.github/actions/playwright-setup
+
+      - name: Run Sanity Tests
+        run: npm run sanity
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-sanity
+          path: allure-results
+
+  api:
+    name: API Test
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Playwright
+        uses: ./.github/actions/playwright-setup
+
+      - name: Run API Tests
+        run: npm run api
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-api
+          path: allure-results
+
+  regression:
+    name: Regression Test
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Playwright
+        uses: ./.github/actions/playwright-setup
+
+      - name: Run Regression Tests
+        run: npm run regression
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-regression
+          path: allure-results
+
+  merge-report:
+    name: Merge Allure Report
+    if: always()
+    needs: [smoke, sanity, api, regression]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline
+
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          path: allure-results-all
+          pattern: allure-results-*
+          merge-multiple: true
+
+      - name: Generate Allure Report
+        run: |
+          allure generate allure-results-all --clean -o allure-report
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+  build-report:
+    name: Build Report
+    if: always()
+    needs: merge-report
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Allure Report
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: ./_site
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy-report:
+    name: Deploy Report
+    if: always()
+    needs: build-report
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

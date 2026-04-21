@@ -1,0 +1,30 @@
+name: 'Allure Report'
+description: 'Upload Allure Report'
+
+inputs:
+  test-step-outcome:
+    description: 'Outcome of the test step (success or failure)'
+    required: true
+  report-upload:
+    description: 'Upload report always or only on failure'
+    required: false
+    default: 'false'
+  retention-days:
+    description: 'Retention days for report'
+    required: false
+    default: '3'
+  report-path:
+    description: 'Path for Allure report'
+    required: false
+    default: 'allure-report'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v4
+      if: ${{ inputs.report-upload == 'true' || inputs.test-step-outcome == 'failure' }}
+      with:
+        name: allure-report-${{ github.job }}
+        path: ${{ inputs.report-path }}
+        retention-days: ${{ inputs.retention-days }}
