@@ -42,7 +42,7 @@ export default defineConfig({
     actionTimeout: 10000,
 
     baseURL: process.env.BASE_URL,
-    headless: false,
+    headless: true,
     video: "off",
     screenshot: "off",
     launchOptions:{
