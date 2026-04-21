@@ -9,10 +9,8 @@ on:
 
 env:
   URL: ${{ secrets.URL }}
-  # API_URL: ${{ secrets.API_URL }}
   USER_NAME: ${{ secrets.USERNAME }}
   EMAIL: ${{ secrets.EMAIL }}
-  # PASSWORD: ${{ secrets.PASSWORD }}
 
 permissions:
   contents: read
