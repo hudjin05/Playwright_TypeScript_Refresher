@@ -91,7 +91,7 @@ jobs:
       - name: Download Allure Report
         uses: actions/download-artifact@v4
         with:
-          name: reports/allure-report
+          name: allure-report
           path: ./_site
 
       - name: Upload Pages Artifact
