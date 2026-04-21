@@ -47,7 +47,7 @@ jobs:
           path: allure-results
 
 
-  merge-report:
+merge-report:
   name: Merge Allure Report
   if: always()
   needs: [smoke]
