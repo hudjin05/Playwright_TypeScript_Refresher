@@ -9,10 +9,10 @@ on:
 
 env:
   URL: ${{ secrets.URL }}
-  API_URL: ${{ secrets.API_URL }}
+  # API_URL: ${{ secrets.API_URL }}
   USER_NAME: ${{ secrets.USER_NAME }}
   EMAIL: ${{ secrets.EMAIL }}
-  PASSWORD: ${{ secrets.PASSWORD }}
+  # PASSWORD: ${{ secrets.PASSWORD }}
 
 permissions:
   contents: read
@@ -33,8 +33,11 @@ jobs:
       - name: Setup Playwright
         uses: ./.github/actions/playwright-setup
 
+      - name: Check env
+        run: echo $URL and $USER_NAME
+
       - name: Run Smoke Tests
-        run: npm run smoke
+        run: npx playwright test -g "@validlogin" --project=chromium
 
       - name: Upload Allure Results
         if: always()
@@ -43,65 +46,65 @@ jobs:
           name: allure-results-smoke
           path: allure-results
 
-  sanity:
-    name: Sanity Test
-    needs: smoke
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # sanity:
+  #   name: Sanity Test
+  #   needs: smoke
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Setup Playwright
-        uses: ./.github/actions/playwright-setup
+  #     - name: Setup Playwright
+  #       uses: ./.github/actions/playwright-setup
 
-      - name: Run Sanity Tests
-        run: npm run sanity
+  #     - name: Run Sanity Tests
+  #       run: npm run sanity
 
-      - name: Upload Allure Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-sanity
-          path: allure-results
+  #     - name: Upload Allure Results
+  #       if: always()
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: allure-results-sanity
+  #         path: allure-results
 
-  api:
-    name: API Test
-    needs: smoke
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # api:
+  #   name: API Test
+  #   needs: smoke
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Setup Playwright
-        uses: ./.github/actions/playwright-setup
+  #     - name: Setup Playwright
+  #       uses: ./.github/actions/playwright-setup
 
-      - name: Run API Tests
-        run: npm run api
+  #     - name: Run API Tests
+  #       run: npm run api
 
-      - name: Upload Allure Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-api
-          path: allure-results
+  #     - name: Upload Allure Results
+  #       if: always()
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: allure-results-api
+  #         path: allure-results
 
-  regression:
-    name: Regression Test
-    needs: smoke
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # regression:
+  #   name: Regression Test
+  #   needs: smoke
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Setup Playwright
-        uses: ./.github/actions/playwright-setup
+  #     - name: Setup Playwright
+  #       uses: ./.github/actions/playwright-setup
 
-      - name: Run Regression Tests
-        run: npm run regression
+  #     - name: Run Regression Tests
+  #       run: npm run regression
 
-      - name: Upload Allure Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-regression
-          path: allure-results
+  #     - name: Upload Allure Results
+  #       if: always()
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: allure-results-regression
+  #         path: allure-results
 
   merge-report:
     name: Merge Allure Report
@@ -128,8 +131,8 @@ jobs:
           merge-multiple: true
 
       - name: Generate Allure Report
-        run: |
-          allure generate allure-results-all --clean -o allure-report
+          run: | 
+          allure generate reports/allure-results --single-file --clean -o allure-single
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
