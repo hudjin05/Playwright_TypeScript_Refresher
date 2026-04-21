@@ -10,7 +10,7 @@ on:
 env:
   URL: ${{ secrets.URL }}
   # API_URL: ${{ secrets.API_URL }}
-  USER_NAME: ${{ secrets.USER_NAME }}
+  USER_NAME: ${{ secrets.USERNAME }}
   EMAIL: ${{ secrets.EMAIL }}
   # PASSWORD: ${{ secrets.PASSWORD }}
 
@@ -46,99 +46,40 @@ jobs:
           name: allure-results-smoke
           path: allure-results
 
-  # sanity:
-  #   name: Sanity Test
-  #   needs: smoke
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - name: Setup Playwright
-  #       uses: ./.github/actions/playwright-setup
-
-  #     - name: Run Sanity Tests
-  #       run: npm run sanity
-
-  #     - name: Upload Allure Results
-  #       if: always()
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: allure-results-sanity
-  #         path: allure-results
-
-  # api:
-  #   name: API Test
-  #   needs: smoke
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - name: Setup Playwright
-  #       uses: ./.github/actions/playwright-setup
-
-  #     - name: Run API Tests
-  #       run: npm run api
-
-  #     - name: Upload Allure Results
-  #       if: always()
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: allure-results-api
-  #         path: allure-results
-
-  # regression:
-  #   name: Regression Test
-  #   needs: smoke
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - name: Setup Playwright
-  #       uses: ./.github/actions/playwright-setup
-
-  #     - name: Run Regression Tests
-  #       run: npm run regression
-
-  #     - name: Upload Allure Results
-  #       if: always()
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: allure-results-regression
-  #         path: allure-results
 
   merge-report:
-    name: Merge Allure Report
-    if: always()
-    needs: [smoke]
-    runs-on: ubuntu-latest
+  name: Merge Allure Report
+  if: always()
+  needs: [smoke]
+  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+  steps:
+    - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
 
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline
+    - name: Install Allure CLI
+      run: npm install -g allure-commandline
 
-      - name: Download Allure Results
-        uses: actions/download-artifact@v4
-        with:
-          path: allure-results-all
-          pattern: allure-results-*
-          merge-multiple: true
+    - name: Download Allure Results
+      uses: actions/download-artifact@v4
+      with:
+        path: allure-results
+        pattern: allure-results-*
+        merge-multiple: true
 
-      - name: Generate Allure Report
-        run: |
-          allure generate reports/allure-results --single-file --clean -o allure-single
+    - name: Generate Allure Report
+      run: |
+        allure generate allure-results --clean -o allure-report
 
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: allure-report
 
   build-report:
     name: Build Report
