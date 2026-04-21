@@ -1,132 +1,132 @@
-name: Run Playwright Tests (repository_dispatch)
+# name: Run Playwright Tests (repository_dispatch)
 
-on:
-  repository_dispatch:
-    types: [ run-tests ]
-  workflow_dispatch:
+# on:
+#   repository_dispatch:
+#     types: [ run-tests ]
+#   workflow_dispatch:
 
-jobs:
-  tests:
-    name: Playwright + Allure Tests
-    runs-on: ubuntu-latest
+# jobs:
+#   tests:
+#     name: Playwright + Allure Tests
+#     runs-on: ubuntu-latest
 
-    env:
-      CALC_URL: ${{ github.event.client_payload.calc_url || vars.CALC_URL || secrets.CALC_URL || 'https://hudjin05.github.io/calculator-demo-app/' }}
-      HEADLESS: "true"
-      PROJECT_NAME: Playwright_Demo_Web_Shop
-      ENV: ${{ github.event.client_payload.env || vars.ENV || 'staging' }}
-      MODE: ${{ github.event.client_payload.mode || 'staging-smoke' }}
+#     env:
+#       CALC_URL: ${{ github.event.client_payload.calc_url || vars.CALC_URL || secrets.CALC_URL || 'https://hudjin05.github.io/calculator-demo-app/' }}
+#       HEADLESS: "true"
+#       PROJECT_NAME: Playwright_Demo_Web_Shop
+#       ENV: ${{ github.event.client_payload.env || vars.ENV || 'staging' }}
+#       MODE: ${{ github.event.client_payload.mode || 'staging-smoke' }}
 
-    steps:
-      # ---------- VALIDATE DISPATCH SOURCE ----------
-      - name: Validate sender (only on repository_dispatch)
-        if: ${{ github.event_name == 'repository_dispatch' }}
-        run: |
-          SRC="${{ github.event.client_payload.source_repo }}"
-          EXPECTED="hudjin05/calculator-demo-app"
-          if [ "$SRC" != "$EXPECTED" ]; then
-            echo "Unexpected sender: $SRC"
-            exit 1
-          fi
+#     steps:
+#       # ---------- VALIDATE DISPATCH SOURCE ----------
+#       - name: Validate sender (only on repository_dispatch)
+#         if: ${{ github.event_name == 'repository_dispatch' }}
+#         run: |
+#           SRC="${{ github.event.client_payload.source_repo }}"
+#           EXPECTED="hudjin05/calculator-demo-app"
+#           if [ "$SRC" != "$EXPECTED" ]; then
+#             echo "Unexpected sender: $SRC"
+#             exit 1
+#           fi
 
-      # ---------- CHECKOUT TESTING REPO ----------
-      - name: Checkout testing repo (this repo)
-        uses: actions/checkout@v4
+#       # ---------- CHECKOUT TESTING REPO ----------
+#       - name: Checkout testing repo (this repo)
+#         uses: actions/checkout@v4
 
-      # ---------- INSTALL NODE & PLAYWRIGHT ----------
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+#       # ---------- INSTALL NODE & PLAYWRIGHT ----------
+#       - name: Set up Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
 
-      - name: Install dependencies (Playwright project)
-        run: |
-          npm install
-          npx playwright install --with-deps
+#       - name: Install dependencies (Playwright project)
+#         run: |
+#           npm install
+#           npx playwright install --with-deps
 
-      - name: Install Allure CLI & http-server
-        run: |
-          npm i -g allure-commandline@2 http-server@14
+#       - name: Install Allure CLI & http-server
+#         run: |
+#           npm i -g allure-commandline@2 http-server@14
 
-      # ---------- PR MODE ----------
-      - name: Checkout app repo at dispatched SHA (PR mode)
-        if: ${{ github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
-        uses: actions/checkout@v4
-        with:
-          repository: hudjin05/calculator-demo-app
-          ref: ${{ github.event.client_payload.sha }}
-          path: app
+#       # ---------- PR MODE ----------
+#       - name: Checkout app repo at dispatched SHA (PR mode)
+#         if: ${{ github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
+#         uses: actions/checkout@v4
+#         with:
+#           repository: hudjin05/calculator-demo-app
+#           ref: ${{ github.event.client_payload.sha }}
+#           path: app
 
-      - name: Start local server (PR mode)
-        if: ${{ github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
-        working-directory: app/docs
-        run: |
-          npx http-server -p 8080 -c-1 --silent &
-          echo $! > /tmp/http-server.pid
-          for i in {1..10}; do
-            curl -fsS http://127.0.0.1:8080 && break || sleep 1
-          done
+#       - name: Start local server (PR mode)
+#         if: ${{ github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
+#         working-directory: app/docs
+#         run: |
+#           npx http-server -p 8080 -c-1 --silent &
+#           echo $! > /tmp/http-server.pid
+#           for i in {1..10}; do
+#             curl -fsS http://127.0.0.1:8080 && break || sleep 1
+#           done
 
-      # ---------- SELECT BASE_URL ----------
-      - name: Decide BASE_URL
-        id: baseurl
-        run: |
-          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${MODE}" = "pr" ]; then
-            echo "BASE_URL=http://127.0.0.1:8080" >> "$GITHUB_OUTPUT"
-          else
-            echo "BASE_URL=${CALC_URL}" >> "$GITHUB_OUTPUT"
-          fi
+#       # ---------- SELECT BASE_URL ----------
+#       - name: Decide BASE_URL
+#         id: baseurl
+#         run: |
+#           if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "${MODE}" = "pr" ]; then
+#             echo "BASE_URL=http://127.0.0.1:8080" >> "$GITHUB_OUTPUT"
+#           else
+#             echo "BASE_URL=${CALC_URL}" >> "$GITHUB_OUTPUT"
+#           fi
 
-      - name: Show resolved test URL
-        run: echo "BASE_URL=${{ steps.baseurl.outputs.BASE_URL }}"
+#       - name: Show resolved test URL
+#         run: echo "BASE_URL=${{ steps.baseurl.outputs.BASE_URL }}"
 
-      # ---------- RUN PLAYWRIGHT TESTS ----------
-      - name: Run Playwright tests
-        env:
-          BASE_URL: ${{ steps.baseurl.outputs.BASE_URL }}
-          ENV: ${{ env.ENV }}
-        run: |
-          npx playwright test --project=chrome
+#       # ---------- RUN PLAYWRIGHT TESTS ----------
+#       - name: Run Playwright tests
+#         env:
+#           BASE_URL: ${{ steps.baseurl.outputs.BASE_URL }}
+#           ENV: ${{ env.ENV }}
+#         run: |
+#           npx playwright test --project=chrome
 
-      # ---------- STOP LOCAL SERVER ----------
-      - name: Stop local server (PR mode)
-        if: ${{ always() && github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
-        run: |
-          if [ -f /tmp/http-server.pid ]; then
-            kill "$(cat /tmp/http-server.pid)" || true
-          fi
+#       # ---------- STOP LOCAL SERVER ----------
+#       - name: Stop local server (PR mode)
+#         if: ${{ always() && github.event_name == 'repository_dispatch' && env.MODE == 'pr' }}
+#         run: |
+#           if [ -f /tmp/http-server.pid ]; then
+#             kill "$(cat /tmp/http-server.pid)" || true
+#           fi
 
-      # ---------- UPLOAD RAW RESULTS ----------
-      - name: Upload Playwright test results
-        if: ${{ failure() || success() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-results
-          path: |
-            reports/allure-results/
+#       # ---------- UPLOAD RAW RESULTS ----------
+#       - name: Upload Playwright test results
+#         if: ${{ failure() || success() }}
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: playwright-results
+#           path: |
+#             reports/allure-results/
 
-      # ---------- GENERATE ALLURE HTML ----------
-      - name: Generate Allure HTML
-        if: ${{ always() }}
-        run: |
-          allure generate reports/allure-results --clean -o allure-report
+#       # ---------- GENERATE ALLURE HTML ----------
+#       - name: Generate Allure HTML
+#         if: ${{ always() }}
+#         run: |
+#           allure generate reports/allure-results --clean -o allure-report
 
-      - name: Upload Allure HTML
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-html
-          path: allure-report
+#       - name: Upload Allure HTML
+#         if: ${{ always() }}
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: allure-html
+#           path: allure-report
 
-      # ---------- SINGLE-FILE REPORT ----------
-      - name: Generate Allure single-file report
-        if: ${{ always() }}
-        run: |
-          allure generate reports/allure-results --single-file --clean -o allure-single
+#       # ---------- SINGLE-FILE REPORT ----------
+#       - name: Generate Allure single-file report
+#         if: ${{ always() }}
+#         run: |
+#           allure generate reports/allure-results --single-file --clean -o allure-single
 
-      - name: Upload Allure single-file report
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-single
-          path: allure-single
+#       - name: Upload Allure single-file report
+#         if: ${{ always() }}
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: allure-single
+#           path: allure-single
