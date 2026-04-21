@@ -37,7 +37,7 @@ jobs:
         run: echo $URL and $USER_NAME
 
       - name: Run Smoke Tests
-        run: npx playwright test -g "@validlogin" --project=chromium --headed=false
+        run: npx playwright test -g "@validlogin" --project=chromium
 
       - name: Upload Allure Results
         if: always()
