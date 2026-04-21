@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results-smoke
-          path: allure-results
+          path: reports/allure-results
 
 
   merge-report:
@@ -65,19 +65,19 @@ jobs:
       - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
-          path: allure-results
+          path: reports/allure-results
           pattern: allure-results-*
           merge-multiple: true
 
       - name: Generate Allure Report
         run: |
-          allure generate allure-results --clean -o allure-report
+          allure generate reports/allure-results --clean -o reports/allure-report
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: allure-report
+          path: reports/allure-report
 
   build-report:
     name: Build Report
@@ -91,7 +91,7 @@ jobs:
       - name: Download Allure Report
         uses: actions/download-artifact@v4
         with:
-          name: allure-report
+          name: reports/allure-report
           path: ./_site
 
       - name: Upload Pages Artifact
